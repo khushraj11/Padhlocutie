@@ -1,1 +1,68 @@
-<!DOCTYPE html><html><head><title>PadhloCutie</title></head><body>PadhloCutie App</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PadhloCutie – Smart Time Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2 class="logo">PadhloCutie</h2>
+      <nav>
+        <button class="nav-btn active" data-target="dashboard">🏠 Dashboard</button>
+        <button class="nav-btn" data-target="planner">📅 Planner</button>
+        <button class="nav-btn" data-target="focus">🎯 Focus Mode</button>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <!-- Dashboard -->
+      <section id="dashboard" class="page visible">
+        <h1>Welcome to PadhloCutie!</h1>
+        <p>Your productivity + cuteness booster 😎✨</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Today's Goals</h3>
+            <ul id="goalList"></ul>
+            <input id="goalInput" placeholder="Add a goal..." />
+            <button onclick="addGoal()">Add Goal</button>
+          </div>
+
+          <div class="card">
+            <h3>Energy Tracker</h3>
+            <div id="energyBox">
+              <button onclick="setEnergy('High')">⚡ High</button>
+              <button onclick="setEnergy('Medium')">🙂 Medium</button>
+              <button onclick="setEnergy('Low')">😴 Low</button>
+            </div>
+            <p id="energyStatus">Your energy: Not set</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Planner -->
+      <section id="planner" class="page">
+        <h1>Time Planner</h1>
+        <input id="taskInput" placeholder="Task name..." />
+        <input id="timeInput" type="number" placeholder="Hours..." />
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="taskList"></ul>
+      </section>
+
+      <!-- Focus Mode -->
+      <section id="focus" class="page">
+        <h1>Focus Timer</h1>
+        <div id="timerDisplay">25:00</div>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="resetTimer()">Reset</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
